@@ -6,37 +6,27 @@ import { v4 as uuidv4 } from 'uuid';
 const KEY = "Users_Save";
 
 function App() {
-  //const usersData = [
-
-    // { id: uuidv4(), name: 'Tania', username: 'floppydiskette' },
-    // { id: uuidv4(), name: 'Craig', username: 'siliconeidolon' },
-    // { id: uuidv4(), name: 'Ben', username: 'benisphere' },
-
-  //];
 
   const localStorageUser = localStorage.getItem(KEY)
   let parsedUsers;
 
-  if(!localStorageUser){
+  if (!localStorageUser) {
     localStorage.setItem(KEY, JSON.stringify([{}]))
     parsedUsers = [{}];
   } else {
     parsedUsers = JSON.parse(localStorageUser)
   }
 
-  
-
-
   //Estado
+
   const [users, setUSers] = useState(parsedUsers);
 
-  useEffect(()=> {
+  useEffect(() => {
     localStorage.setItem(KEY, JSON.stringify(users))
   }, [users])
 
-
-
   //Agregar usuarios
+
   const addUser = (user) => {
     user.id = uuidv4();
     setUSers([
@@ -47,13 +37,13 @@ function App() {
   }
 
   //Eliminar un usuario
+
   const deleteUser = (id) => {
     setUSers(users.filter(user => user.id !== id))
-
-
   }
 
   //Editar un usuario
+
   const [editing, setEditing] = useState(false);
 
   const [currentUser, setCurrentUSer] = useState({
@@ -76,15 +66,9 @@ function App() {
     setUSers(users.map(user => (user.id === id ? updateUser : user)))
   }
 
-
-
-
-
-
-
   return (
     <div className="container">
-      <h1>CRUD App with Hooks</h1>
+      <h1>CRUD de Usuarios</h1>
       <div className="flex-row">
         <div className="flex-large">
 
@@ -116,5 +100,4 @@ function App() {
 
   );
 }
-
 export default App;

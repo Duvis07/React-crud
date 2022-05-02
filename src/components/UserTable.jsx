@@ -37,7 +37,6 @@ const UserTable = (props) => {
                             </td>
                         </tr>
 
-
                     )) : (
                         <tr>
                             <td colSpan={3}>
@@ -52,5 +51,4 @@ const UserTable = (props) => {
         </table>
     );
 };
-
 export default UserTable;
