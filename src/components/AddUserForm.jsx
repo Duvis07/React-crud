@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 const AddUserForm = (props) => {
 
-    const { register, errors, handleSubmit } = useForm();
+    const { register, handleSubmit, formState:{errors} } = useForm();
 
     const onSubmit = (data, e) => {
         //console.log(data);
@@ -30,7 +30,7 @@ const AddUserForm = (props) => {
             <div>
                 {errors?.name?.message}
             </div>
-            <button>Add new user</button>
+            <button>Agregar usuario</button>
 
         </form>
     );
