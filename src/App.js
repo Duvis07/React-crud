@@ -1,19 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserTable from './components/UserTable';
 import AddUserForm from './components/AddUserForm';
 import EditUserForm from './components/EditUserForm';
 import { v4 as uuidv4 } from 'uuid';
+const KEY = "Users_Save";
 
 function App() {
-  const usersData = [
+  //const usersData = [
 
-    { id: uuidv4(), name: 'Tania', username: 'floppydiskette' },
-    { id: uuidv4(), name: 'Craig', username: 'siliconeidolon' },
-    { id: uuidv4(), name: 'Ben', username: 'benisphere' },
+    // { id: uuidv4(), name: 'Tania', username: 'floppydiskette' },
+    // { id: uuidv4(), name: 'Craig', username: 'siliconeidolon' },
+    // { id: uuidv4(), name: 'Ben', username: 'benisphere' },
 
-  ];
+  //];
+
+  const localStorageUser = localStorage.getItem(KEY)
+  let parsedUsers;
+
+  if(!localStorageUser){
+    localStorage.setItem(KEY, JSON.stringify([{}]))
+    parsedUsers = [{}];
+  } else {
+    parsedUsers = JSON.parse(localStorageUser)
+  }
+
+  
+
+
   //Estado
-  const [users, setUSers] = useState(usersData);
+  const [users, setUSers] = useState(parsedUsers);
+
+  useEffect(()=> {
+    localStorage.setItem(KEY, JSON.stringify(users))
+  }, [users])
+
+
 
   //Agregar usuarios
   const addUser = (user) => {
