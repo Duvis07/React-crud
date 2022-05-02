@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import UserTable from './components/UserTable';
+import AddUserForm from './components/AddUserForm';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
@@ -10,8 +11,20 @@ function App() {
     { id: uuidv4(), name: 'Ben', username: 'benisphere' },
 
   ];
-  //estado
+  //Estado
   const [users, setUSers] = useState(usersData);
+
+  //Agregar usuarios
+  const addUser = (user) => {
+    user.id = uuidv4();
+    setUSers([
+      ...users,
+      user
+
+    ])
+  }
+
+
 
 
   return (
@@ -20,6 +33,7 @@ function App() {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add user</h2>
+          <AddUserForm addUser = {addUser}/>
         </div>
         <div className="flex-large">
           <h2>View users</h2>
