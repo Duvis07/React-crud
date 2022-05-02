@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>CRUD de Usuarios</h1>
+      <h1 className= "titulo">CRUD de <br/> Usuarios</h1>
       <div className="flex-row">
         <div className="flex-large">
 
@@ -80,14 +80,14 @@ function App() {
               />
             </div>
           ) : (
-            <div>
-              <h2>Agregar Usuario</h2>
+            <div >
+              <h3>Agregar Usuario</h3>
               <AddUserForm addUser={addUser} />
             </div>
           )}
         </div>
         <div className="flex-large">
-          <h2>Ver lista de usuarios</h2>
+          <h3>Ver lista de usuarios</h3>
           <UserTable
             users={users}
             deleteUser={deleteUser}

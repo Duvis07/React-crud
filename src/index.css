@@ -22,6 +22,7 @@
  */
  html {
   line-height: 1.15;
+  background-color:rgb(142, 160, 178);;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -50,6 +51,12 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  text-align: center;
+}
+
+.flex-large{
+  background-color: rgb(122, 150, 177);
+  border: 2px solid #d0d0d0;
 }
 
 /* Grouping content
@@ -378,7 +385,7 @@ html {
 
 body {
   color: #404040;
-  background: white;
+  background: rgb(142, 160, 178);
   font-size: 1rem;
 }
 
