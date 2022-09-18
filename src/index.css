@@ -1,28 +1,7 @@
-/*! 
- * Primitive UI | MIT License
- *
- * A minimalist front-end design toolkit built with Sass for developing 
- * responsive, browser-consistent web apps.
- *
- * Author: Tania Rascia <hello@taniarascia.com>
- * Source: https://github.com/taniarascia/primitive
- * Documentation: https://taniarascia.github.io/primitive
- */
-/**
- * Variables
- *
- * The majority of the configuration for the toolkit.
- */
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
+
  html {
   line-height: 1.15;
-  background-color:rgb(142, 160, 178);;
+  background-color:white;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -55,7 +34,7 @@ h1 {
 }
 
 .flex-large{
-  background-color: rgb(122, 150, 177);
+  background-color: white;
   border: 2px solid #d0d0d0;
 }
 
@@ -385,7 +364,7 @@ html {
 
 body {
   color: #404040;
-  background: rgb(142, 160, 178);
+  background:white;
   font-size: 1rem;
 }
 

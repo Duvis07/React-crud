@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className= "titulo">CRUD de <br/> Usuarios</h1>
+      <h1 className= "titulo">CRUD USUARIOS</h1>
       <div className="flex-row">
         <div className="flex-large">
 
